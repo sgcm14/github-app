@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { UserContext } from "./UserContext"; 
+import { UserContext } from "./UserContext";
 import "./App.css";
 
 function App() {
@@ -22,9 +22,14 @@ function App() {
     const data = await fetch(`https://api.github.com/users/${input}`);
     const json = await data.json();
 
-    const { name, avatar_url, html_url, login } = json;
+    // const { name, avatar_url, html_url, login } = json;
 
-    changeUser({ name, avatar_url, html_url, username: login });
+    // changeUser({ name, avatar_url, html_url, username: login });
+    
+    // Aquí ya no debemos ocuparnos de extraer las propiedades
+    // que deseamos almacenar, ya que de ello se
+    // ocupará el reducer
+    changeUser(json);
   };
 
   return (
