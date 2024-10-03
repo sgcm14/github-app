@@ -53,6 +53,7 @@ function App() {
           <h3>{user.name}</h3>
           <h4>{user.username}</h4>
           <img src={user.avatar_url} alt={user.name} />
+          <br />
           <a href={user.html_url} target="_blank" rel="noreferrer">
             Ver perfil completo
           </a>
